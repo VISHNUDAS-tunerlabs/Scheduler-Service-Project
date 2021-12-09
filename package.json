@@ -1,0 +1,23 @@
+{
+  "name": "jobremainder",
+  "version": "1.0.0",
+  "description": "job scheduler api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VISHNUDAS-tunerlabs/Scheduler-Service-Project.git"
+  },
+  "author": "vishnudas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VISHNUDAS-tunerlabs/Scheduler-Service-Project/issues"
+  },
+  "homepage": "https://github.com/VISHNUDAS-tunerlabs/Scheduler-Service-Project#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
