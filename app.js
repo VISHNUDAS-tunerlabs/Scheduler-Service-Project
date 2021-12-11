@@ -5,7 +5,7 @@ const port=3000
 
 /*sending data*/
 app.get('/',(req,res)=>{
-    res.send('Welcome')
+    res.send('Welcome to nodejs')
 })
 
 /*setting the server*/
