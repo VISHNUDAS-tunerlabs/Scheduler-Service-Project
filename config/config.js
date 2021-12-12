@@ -1,3 +1,3 @@
 module.exports={
-    url:'mongodb://localhost/tasks'
+    url:'mongodb://localhost/taskSheduler'
 }
