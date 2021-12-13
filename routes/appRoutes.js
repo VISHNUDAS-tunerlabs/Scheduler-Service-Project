@@ -8,12 +8,17 @@ router.get('/',(req,res)=>{
     res.send('Welcome to nodejs')   
 })
 router.post('/add',async(req,res)=>{
-    await taskCrud.createTask(req)
-    res.send('hai')    
+    let addtask=await taskCrud.createTask(req)
+    if(addtask.msg=="success"){
+        res.status(200).json({"reply":addtask})
+    }else{
+        res.status(404).json({"reply":"error occured"})
+    }   
 })
-router.get('/alltask',(req,res)=>{
-    taskCrud.viewTasks()
-})
+
+
+
+
 /*error handling for invalid routes*/
 router.get('*', function (req, res) {
     res.status(404).json({msg:"Invalid route"});

@@ -20,21 +20,13 @@ var createTask=async(req)=>{
     try{
         const task=await new Task(req.body)
         await task.save()
-        console.log('Data inserted')
-    }catch{
-        console.log('some error occured. Data insertion failed')
+        return{"msg":"success"}
+            //console.log(result)
+    }catch(err){
+        return{"msg":"failed"}
     }
-}
-/*getting all the task details */
-var viewTasks=()=>{
-    connectDb
-    Task.find().then((result)=>{
-        console.log(result)//return({"msg":"values fetched" ,"data":result})
-    }).catch((err)=>{
-        console.log(err)
-    })
-
+    
+    
 }
 
-
-module.exports={connectDb,createTask,viewTasks}
+module.exports={connectDb,createTask}
