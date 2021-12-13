@@ -10,7 +10,7 @@ const taskSchema=new Schema({
     date:{type:Date},
     time:{type:String,required:true},
     repeate:{type:String,required:true},
-    finshed:{type:Boolean}    
+    finshed:{type:Boolean,default:false}    
 })
-const Task=mongoose.model('Task','taskSchema')
+const Task=mongoose.model('Task',taskSchema)
 module.exports=Task;
