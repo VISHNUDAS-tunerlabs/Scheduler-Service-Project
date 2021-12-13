@@ -15,18 +15,27 @@ var connectDb=async()=>{
 }
 
 /*Storing task into the db*/
-var createTask=async(req)=>{
+var createTask=async(req,res)=>{
     connectDb()
     try{
         const task=await new Task(req.body)
         await task.save()
-        return{"msg":"success"}
-            //console.log(result)
+        res.status(200).json({"msg":"success"})
     }catch(err){
-        return{"msg":"failed"}
+        res.status(404).json({"msg":err})
     }
     
     
 }
+/*retrieving all the tasks from database*/
+var viewAlltasks=async(req,res)=>{   
+    connectDb()
+    Task.find().then((result)=>{
+        console.log(result)
+        res.status(200).send(result)
+    }).catch((err)=>{
+        res.status(404).send(err)
+    })
+}
 
-module.exports={connectDb,createTask}
+module.exports={connectDb,createTask,viewAlltasks}

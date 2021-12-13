@@ -7,14 +7,10 @@ router.get('/',(req,res)=>{
     taskCrud.connectDb()
     res.send('Welcome to nodejs')   
 })
-router.post('/add',async(req,res)=>{
-    let addtask=await taskCrud.createTask(req)
-    if(addtask.msg=="success"){
-        res.status(200).json({"reply":addtask})
-    }else{
-        res.status(404).json({"reply":"error occured"})
-    }   
-})
+
+//api routes
+router.post('/add',taskCrud.createTask)
+router.get('/alltasks',taskCrud.viewAlltasks)
 
 
 
