@@ -12,5 +12,5 @@ const taskSchema=new Schema({
     repeate:{type:String,required:true},
     finshed:{type:Boolean,default:false}    
 })
-const Task=mongoose.model('Task',taskSchema)
+const Task=mongoose.model('task',taskSchema)
 module.exports=Task;
